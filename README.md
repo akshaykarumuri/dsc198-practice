@@ -1,3 +1,5 @@
+Practice repository for DSC 198: a place for weekly solutions and the Session 1 lab.
+
 # Session 1 lab: your practice repository
 
 Twenty minutes. You leave with a private repository, one merged pull request,
