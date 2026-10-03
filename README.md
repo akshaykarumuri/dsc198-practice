@@ -1,51 +1,44 @@
-Practice repository for DSC 198: a place for weekly solutions and the Session 1 lab.
+# dsc198-practice
 
-# Session 1 lab: your practice repository
+Practice repository for DSC 198. It holds the Session 1 lab code and a folder for each week's solutions.
 
-Twenty minutes. You leave with a private repository, one merged pull request,
-and a folder per week to put solutions in.
+## Layout
 
-## Files here
-
-| File | What it is |
+| Path | Purpose |
 |---|---|
-| `hello.py` | The trivial function you push in the lab |
-| `test_hello.py` | Its test. It passes |
-| `gitignore.template` | Rename to `.gitignore` in your repository |
+| `hello.py` | A small `hello(name="world")` function |
+| `test_hello.py` | Tests for `hello` |
+| `week1/` to `week5/` | One folder per week for solutions |
+| `.gitignore` | Ignores Python caches, virtual environments and editor files |
 
-## The lab
+## Running the tests
 
-1. Create a private repository on GitHub named `dsc198-practice`.
-2. Clone it, then copy the three files here into it. Rename the template:
+Install pytest, then run it from the repository root:
 
-        git clone git@github.com:YOU/dsc198-practice.git
-        cd dsc198-practice
-        cp .../gitignore.template .gitignore
-        mkdir -p week1 week2 week3 week4 week5
+    pip install pytest
+    pytest
 
-3. Write a README with one line saying what the repository is for.
-4. Branch, commit, push:
+## Workflow
 
-        git switch -c add-hello
-        git add .
-        git commit -m "Add hello and its test"
-        git push -u origin add-hello
+Work on a branch, commit, push, and open a pull request for review before merging into `main`:
 
-5. Open a pull request. Request review from the person on your left.
-6. Review theirs. Leave one comment. Approve.
-7. Merge yours, then:
+    git switch -c my-branch
+    git add .
+    git commit -m "Describe the change"
+    git push -u origin my-branch
 
-        git switch main
-        git pull
+After the pull request is merged, update your local copy:
 
-`git log --oneline --graph` should show the merge.
+    git switch main
+    git pull
 
-## If the push is rejected
+`git log --oneline --graph` shows the merge history.
 
-You have no SSH key on this machine, or the key is not on your GitHub account.
-Generate one and add it:
+## If a push is rejected
+
+Your machine may have no SSH key, or the key may not be on your GitHub account. Generate one and add it:
 
     ssh-keygen -t ed25519 -C "your@email"
     cat ~/.ssh/id_ed25519.pub
 
-Paste that into GitHub, Settings, SSH and GPG keys. Then push again.
+Paste the output into GitHub under Settings, SSH and GPG keys, then push again.
